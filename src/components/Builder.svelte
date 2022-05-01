@@ -3,6 +3,9 @@
     <div class="builder__part__label">block_meta</div>
     <div class="builder__part__inner">
       <Input label="BLOCK_REGISTER_NAME" key="BLOCK_REGISTER_NAME" />
+      <Input label="BLOCK_TITLE" key="BLOCK_TITLE" />
+      <Checkbox label="hasSidebar" key="hasSidebar" />
+
     </div>
   </div>
 </div>
@@ -10,6 +13,7 @@
 
 <script>
   import Input from './Input.svelte'
+  import Checkbox from './Checkbox.svelte'
 </script>
 
 <style scoped>

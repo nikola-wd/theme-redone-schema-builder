@@ -18,7 +18,9 @@
 import Prism from 'prismjs';
 import { block_meta } from '../stores';
 
-const code = `
+// $: meta = $block_meta
+
+$: code = `
   {
   "block_meta": {
     "BLOCK_REGISTER_NAME": "${$block_meta.BLOCK_REGISTER_NAME}",

@@ -4,8 +4,9 @@
     type="text" 
     class="input" 
     bind:value={$block_meta[key]}
-    on:change={e => {handleUpdate(e)}}
+
   />
+  {$block_meta[key]}
 </div>
 
 <script>
