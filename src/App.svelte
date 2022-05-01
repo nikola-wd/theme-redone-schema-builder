@@ -1,11 +1,17 @@
 <script>
   import Counter from './lib/Counter.svelte'
   import Builder from './components/Builder.svelte'
+  import Schema from './components/Schema.svelte'
+  import Preview from './components/Preview.svelte'
 
 </script>
 
 <div class="theme-redone-schema-builder-wrap">
   <Builder />
+  <div class="result">
+    <Schema />
+    <Preview />
+  </div>
 </div>
 
 <style>
@@ -17,6 +23,7 @@
   body {
     padding: 0;
     margin: 0;
+    overflow: hidden;
   }
 
   *, *:before, *:after {
@@ -57,5 +64,10 @@
     display: flex;
     box-shadow: 0 0 0 1px red;
     height: 100vh;
+  }
+
+  .result {
+    background: orange;
+    flex: 1;
   }
 </style>
