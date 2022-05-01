@@ -21,11 +21,11 @@ import { block_meta } from '../stores';
 // $: meta = $block_meta
 
 $: code = `
-  {
+{
   "block_meta": {
     "BLOCK_REGISTER_NAME": "${$block_meta.BLOCK_REGISTER_NAME}",
     "BLOCK_TITLE": "${$block_meta.BLOCK_TITLE}",
-    "keywords": ${JSON.stringify($block_meta.keywords)},
+    "keywords": ${JSON.stringify($block_meta.keywords.split(', '))},
     "hasSidebar": ${JSON.stringify($block_meta.hasSidebar)},
     "hasExample": ${JSON.stringify($block_meta.hasExample)},
     "hasGlobalSettings": ${JSON.stringify($block_meta.hasGlobalSettings)},

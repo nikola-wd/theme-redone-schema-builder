@@ -6,7 +6,6 @@
     bind:value={$block_meta[key]}
 
   />
-  {$block_meta[key]}
 </div>
 
 <script>
@@ -26,7 +25,7 @@
   .input {
     box-sizing: border-box;
     border: 0;
-    border-radius: 5px;
+    border-radius: 4px;
     height: 40px;
     width: 100%;
     padding: 10px;
@@ -42,6 +41,6 @@
   }
 
   .input-wrap {
-    margin-bottom: 20px;
+    margin-bottom: 10px;
   }
 </style>

@@ -1,17 +1,21 @@
 <div class="builder">
-  <div class="builder__part">
-    <div class="builder__part__label">block_meta</div>
-    <div class="builder__part__inner">
-      <Input label="BLOCK_REGISTER_NAME" key="BLOCK_REGISTER_NAME" />
-      <Input label="BLOCK_TITLE" key="BLOCK_TITLE" />
-      <Checkbox label="hasSidebar" key="hasSidebar" />
+  <Dropdown label="block_meta">
+    <Input label="BLOCK_REGISTER_NAME" key="BLOCK_REGISTER_NAME" />
+    <Input label="BLOCK_TITLE" key="BLOCK_TITLE" />
+    <Input label="keywords" key="keywords" />
+    <Checkbox label="hasSidebar" key="hasSidebar" />
+    <Checkbox label="hasExample" key="hasExample" />
+    <Checkbox label="hasGlobalSettings" key="hasGlobalSettings" />
+  </Dropdown>
 
-    </div>
-  </div>
+  <Dropdown label="attributes">
+    TODO
+  </Dropdown>
 </div>
 
 
 <script>
+  import Dropdown from './Dropdown.svelte'
   import Input from './Input.svelte'
   import Checkbox from './Checkbox.svelte'
 </script>
@@ -21,21 +25,5 @@
     width: 40%;
     padding: 20px;
     background: #222;
-  }
-
-  .builder__part {
-    border: 1px solid #111;
-    border-radius: 4px;
-  }
-
-  .builder__part__label {
-    color: #cecece;
-    background: #111;
-    padding: 8px;
-    line-height: 1;
-  }
-
-  .builder__part__inner {
-    padding: 10px;
   }
 </style>
