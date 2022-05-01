@@ -1,3 +1,7 @@
+<svelte:head>
+  {@html github}
+</svelte:head>
+
 <div class="schema">
 <div class="top">model.json</div>
 <div class="schema__inner">
@@ -17,8 +21,18 @@
   {'}'}
 {'}'}
 </pre>
+
+  <Highlight language={typescript} {code} />
 </div>
 </div>
+
+
+<script>
+import Highlight from "svelte-highlight";
+import github from "svelte-highlight/styles/github";
+
+const code = "const add = (a: number, b: number) => a + b;";
+</script>
 
 <style scoped>
   .schema {
