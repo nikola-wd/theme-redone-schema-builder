@@ -1,37 +1,38 @@
 <svelte:head>
-  {@html github}
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/prism-themes/1.5.0/prism-atom-dark.min.css" rel="stylesheet" />
 </svelte:head>
 
 <div class="schema">
 <div class="top">model.json</div>
 <div class="schema__inner">
-<pre>{'{'}
-  "block_meta": {'{'}
-    "BLOCK_REGISTER_NAME": "block-name-here",
-    "BLOCK_TITLE": "Main Cta",
-    "keywords": ["cta", "link"],
-    "hasSidebar": false,
-    "hasExample": true,
-    "hasGlobalSettings": false,
-    "grid": "2"
-  {'}'},
 
-  "attributes": {'{'}
-
-  {'}'}
-{'}'}
+<pre>
+  {@html Prism.highlight(code, Prism.languages['javascript'])}
 </pre>
 
-  <Highlight language={typescript} {code} />
 </div>
 </div>
 
 
 <script>
-import Highlight from "svelte-highlight";
-import github from "svelte-highlight/styles/github";
+import Prism from 'prismjs';
+import { block_meta } from '../stores';
 
-const code = "const add = (a: number, b: number) => a + b;";
+const code = `
+  {
+  "block_meta": {
+    "BLOCK_REGISTER_NAME": "${$block_meta.BLOCK_REGISTER_NAME}",
+    "BLOCK_TITLE": "${$block_meta.BLOCK_TITLE}",
+    "keywords": ${JSON.stringify($block_meta.keywords)},
+    "hasSidebar": ${JSON.stringify($block_meta.hasSidebar)},
+    "hasExample": ${JSON.stringify($block_meta.hasExample)},
+    "hasGlobalSettings": ${JSON.stringify($block_meta.hasGlobalSettings)},
+    ${$block_meta.grid ? '"grid":' + $block_meta.grid : ''}
+  },
+
+  "attributes": {}
+}
+`;
 </script>
 
 <style scoped>
@@ -61,5 +62,9 @@ const code = "const add = (a: number, b: number) => a + b;";
     padding: 10px;
     color: #fff;
     background: rgba(0,0,0, .5);
+  }
+
+  pre .token.operator {
+    background: transparent !important;
   }
 </style>
