@@ -9,7 +9,7 @@
   </Dropdown>
 
   <Dropdown label="attributes">
-    TODO
+    <Button>Add Field</Button>
   </Dropdown>
 </div>
 
@@ -18,6 +18,8 @@
   import Dropdown from './Dropdown.svelte'
   import Input from './Input.svelte'
   import Checkbox from './Checkbox.svelte'
+  import Button from './Button.svelte'
+
 </script>
 
 <style scoped>

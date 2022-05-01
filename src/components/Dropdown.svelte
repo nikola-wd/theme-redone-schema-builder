@@ -1,5 +1,8 @@
-<div class="dd {closed ? 'closed' : ''}" on:click={() => closed = !closed}>
-  <div class="dd__top">
+<div class="dd {closed ? 'closed' : ''}">
+  <div 
+    class="dd__top" 
+    on:click={() => closed = !closed}
+  >
     {label}
     <div class="svg-wrap">
       <Chevron />
@@ -49,6 +52,10 @@
 }
 .dd:not(.closed) .svg-wrap {
   transform: rotate(180deg);  
+}
+
+.dd__btm {
+  background: #181818;
 }
 
 /* TODO: add animation from svelte */

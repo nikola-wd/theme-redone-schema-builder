@@ -2,15 +2,12 @@
   import Counter from './lib/Counter.svelte'
   import Builder from './components/Builder.svelte'
   import Schema from './components/Schema.svelte'
-  import Preview from './components/Preview.svelte'
-
 </script>
 
 <div class="theme-redone-schema-builder-wrap">
   <Builder />
   <div class="result">
     <Schema />
-    <Preview />
   </div>
 </div>
 
