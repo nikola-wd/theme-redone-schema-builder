@@ -4,7 +4,7 @@
     type="text" 
     class="input" 
     bind:value={$block_meta[key]}
-    on:change={handleUpdate}
+    on:change={e => {handleUpdate(e)}}
   />
 </div>
 
@@ -12,11 +12,9 @@
   import { block_meta } from '../stores';
 
   export let label;
-  export let objectName = block_meta;
   export let key;
 
   const handleUpdate = e => {
-    const newVal = e.target.value
     const newObj = {...block_meta}
     newObj[key] = e.target.value
     $block_meta = newObj

@@ -2,7 +2,7 @@
   <div class="builder__part">
     <div class="builder__part__label">block_meta</div>
     <div class="builder__part__inner">
-      <Input label="BLOCK_REGISTER_NAME" objectName="block_meta" key="BLOCK_REGISTER_NAME" />
+      <Input label="BLOCK_REGISTER_NAME" key="BLOCK_REGISTER_NAME" />
     </div>
   </div>
 </div>
