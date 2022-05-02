@@ -33,9 +33,9 @@ $: code = `
   },
 
   "attributes": {
-    ${Object.keys(fields).map(field_name => `"${field_name}": {
+    ${Object.keys(fields).map(field_id => `"${fields[field_id].field_name}": {
       "field_meta": {
-        ${Object.entries(fields[field_name].field_meta)
+        ${Object.entries(fields[field_id].main_data.field_meta)
           .map(([key, val]) => `"${key}": "${val}"\n       `)}
       },
       "default": {}
