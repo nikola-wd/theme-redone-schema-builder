@@ -16,7 +16,9 @@
 
 <script>
 import Prism from 'prismjs';
-import { block_meta } from '../stores';
+import { block_meta, attributes } from '../stores';
+
+$: fields = $attributes
 
 $: code = `
 {
@@ -30,7 +32,15 @@ $: code = `
     ${$block_meta.grid ? '"grid":' + $block_meta.grid : ''}
   },
 
-  "attributes": {}
+  "attributes": {
+    ${Object.keys(fields).map(field_name => `"${field_name}": {
+      "field_meta": {
+        ${Object.entries(fields[field_name].field_meta)
+          .map(([key, val]) => `"${key}": "${val}"\n       `)}
+      },
+      "default": {}
+    }
+  }`)}
 }
 `;
 </script>

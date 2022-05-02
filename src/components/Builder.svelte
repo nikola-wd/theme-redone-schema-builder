@@ -8,7 +8,8 @@
     <Checkbox label="hasGlobalSettings" key="hasGlobalSettings" />
   </Dropdown>
 
-  <Dropdown label="attributes">
+  <Dropdown label="attributes (fields)">
+    <Fields />
     <Button>Add Field</Button>
   </Dropdown>
 </div>
@@ -19,7 +20,7 @@
   import Input from './Input.svelte'
   import Checkbox from './Checkbox.svelte'
   import Button from './Button.svelte'
-
+  import Fields from './Fields.svelte'
 </script>
 
 <style scoped>
