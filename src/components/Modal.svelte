@@ -1,7 +1,12 @@
-<div class="backdrop" />
-<div class="modal">
+<div class="backdrop" transition:fade="{{ duration: 200 }}" />
+<div class="modal" transition:fade="{{ duration: 200 }}">
   <slot />
 </div>
+
+
+<script>
+  import { fade } from 'svelte/transition';
+</script>
 
 
 <style scoped>
