@@ -3,9 +3,9 @@
     <BlockMetaInput label="BLOCK_REGISTER_NAME" key="BLOCK_REGISTER_NAME" />
     <BlockMetaInput label="BLOCK_TITLE" key="BLOCK_TITLE" />
     <BlockMetaInput label="keywords" key="keywords" />
-    <Checkbox label="hasSidebar" key="hasSidebar" />
-    <Checkbox label="hasExample" key="hasExample" />
-    <Checkbox label="hasGlobalSettings" key="hasGlobalSettings" />
+    <BlockMetaCheckbox label="hasSidebar" key="hasSidebar" />
+    <BlockMetaCheckbox label="hasExample" key="hasExample" />
+    <BlockMetaCheckbox label="hasGlobalSettings" key="hasGlobalSettings" />
   </Dropdown>
 
   <Dropdown label="attributes (fields)">
@@ -28,7 +28,7 @@
   
   import Dropdown from './Dropdown.svelte'
   import BlockMetaInput from './BlockMetaInput.svelte'
-  import Checkbox from './Checkbox.svelte'
+  import BlockMetaCheckbox from './BlockMetaCheckbox.svelte'
   import Button from './Button.svelte'
   import Fields from './Fields.svelte'
   import AddRootField from './AddRootField.svelte'

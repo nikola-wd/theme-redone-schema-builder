@@ -2,24 +2,15 @@
   <input 
     type="checkbox" 
     class="checkbox" 
-    bind:checked={$block_meta[key]}
-   
+    bind:checked
   />
   <span class="indicator"></span>
   <span class="txt">{label}</span>
 </label>
 
 <script>
-  import { block_meta } from '../stores';
-
   export let label;
-  export let key;
-
-  const handleUpdate = e => {
-    const newObj = {...block_meta}
-    newObj[key] = !newObj[key]
-    $block_meta = newObj
-  }
+  export let checked;
 </script>
 
 <style>

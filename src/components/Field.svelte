@@ -27,6 +27,7 @@
 
 <script>
   import Dropdown from './Dropdown.svelte'
+  import TogglableControl from './controls/TogglableControl.svelte'
   import AttrsFieldInput from './AttrsFieldInput.svelte'
 
   export let id
