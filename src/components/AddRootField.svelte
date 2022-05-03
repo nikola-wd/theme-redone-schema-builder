@@ -16,6 +16,13 @@
       label="fieldLabel"
       bind:value="{fieldLabel}" 
     />
+    {#if selectedFieldType === 'text'}
+      <Select 
+        bind:value="{data.number.field_meta.variation}"
+        label="Variation"
+        options="{['default', 'long', 'rich']}"
+      />
+    {/if}
     {#if selectedFieldType === 'number'}
       <Input
         label="min" 
@@ -67,8 +74,8 @@
       text: {
         field_meta: {
           type: 'text',
-          text_type: 'long',
-          max_chars: 30
+          variation: 'default',
+          max_chars: null
         },
         default: {
           text: ''
