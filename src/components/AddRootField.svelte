@@ -10,15 +10,15 @@
 
     <Input
       label="fieldName"
-      bind:value="{fieldName}" 
+      bind:value="{newField.field_name}" 
     />
     <Input
       label="fieldLabel"
-      bind:value="{fieldLabel}" 
+      bind:value="{newField.main_data.field_meta.label}" 
     />
     {#if selectedFieldType === 'text'}
       <Select 
-        bind:value="{data.number.field_meta.variation}"
+        bind:value="{data.text.field_meta.variation}"
         label="Variation"
         options="{['default', 'long', 'rich']}"
       />
@@ -66,8 +66,18 @@
 
 
   let selectedFieldType = 'text'
-  let fieldName = 'field-name-here'
-  let fieldLabel = 'Field Label Here'
+
+  let newField = {
+    field_name: 'field_name_here',
+    main_data: {
+      type: 'object',
+      field_meta: {
+        label: 'Field Label Here',
+        help: null,
+      },
+      default: {},
+    },
+  }
 
     // TODO: temp; refactor
     const data = {
@@ -102,22 +112,35 @@
 
 
     // TODO: Make this dynamic
-    const newField = {
-      field_name: fieldName,
+    newField = {
+      ...newField,
       main_data: {
-        type: 'object',
-        id: 2,
+        ...newField.main_data,
         field_meta: {
+          ...newField.main_data.field_meta,
           ...data[selectedFieldType].field_meta,
-          label: fieldLabel,
-          help: null,
-          col: '2',
         },
         default: {
           ...data[selectedFieldType].default
-        },
-      },
+        }
+      }
     }
+    // newField = {
+    //   field_name: 'field_name_here',
+    //   main_data: {
+    //     type: 'object',
+    //     id: 2,
+    //     field_meta: {
+    //       ...data[selectedFieldType].field_meta,
+    //       label: fieldLabel,
+    //       help: null,
+    //       col: '2',
+    //     },
+    //     default: {
+    //       ...data[selectedFieldType].default
+    //     },
+    //   },
+    // }
 
 
     $attributes['test_id_3'] = {

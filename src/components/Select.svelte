@@ -1,6 +1,6 @@
 <div>
   <label>{label}</label>
-  <select bind:value>
+  <select bind:value on:change>
     {#each options as option}
       <option value={option}>{option}</option>
     {/each}
