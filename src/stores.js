@@ -32,7 +32,6 @@ export const attributes = writable({
     field_name: 'text',
     main_data: {
       type: 'object',
-      id: 2,
       field_meta: {
         type: 'text',
         text_type: 'long',
