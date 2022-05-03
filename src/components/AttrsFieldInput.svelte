@@ -5,7 +5,7 @@
   import Input from './Input.svelte'
 
   export let id
-  export let label;
+  export let label = null;
   export let key;
   export let key1;
   export let key2;

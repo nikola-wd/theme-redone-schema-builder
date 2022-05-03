@@ -14,18 +14,32 @@
       key1="field_meta"
       key2="label"
     />
-    <AttrsFieldInput 
-      id="{id}" 
-      label="help" 
-      key="main_data"
-      key1="field_meta"
-      key2="help"
-    />
+    <TogglableControl 
+      label="help"
+      checked={$attributes[id].main_data.field_meta.help !== null}
+      on:change={e => {
+        if (!e.target.checked) {
+          // TOOD: Find a way to do this better
+          $attributes[id].main_data.field_meta.help = null
+        } else {
+          $attributes[id].main_data.field_meta.help = ''
+        }
+      }
+    }
+    >
+      <AttrsFieldInput 
+        id="{id}" 
+        key="main_data"
+        key1="field_meta"
+        key2="help"
+      />
+    </TogglableControl>
   </div>
 </Dropdown>
 
 
 <script>
+  import { attributes } from '../stores'
   import Dropdown from './Dropdown.svelte'
   import TogglableControl from './controls/TogglableControl.svelte'
   import AttrsFieldInput from './AttrsFieldInput.svelte'

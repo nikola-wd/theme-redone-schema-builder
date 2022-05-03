@@ -1,4 +1,4 @@
-<Checkbox {label} bind:checked={checked} />
+<Checkbox {label} bind:checked />
 
 <script>
   import { block_meta } from '../stores';

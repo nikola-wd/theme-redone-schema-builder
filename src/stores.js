@@ -36,6 +36,7 @@ export const attributes = writable({
         type: 'text',
         text_type: 'long',
         label: 'Content',
+        help: null,
         col: '2',
       },
       default: {

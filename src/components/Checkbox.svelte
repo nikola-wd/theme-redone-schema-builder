@@ -3,9 +3,12 @@
     type="checkbox" 
     class="checkbox" 
     bind:checked
+    on:change
   />
   <span class="indicator"></span>
-  <span class="txt">{label}</span>
+  {#if label}
+    <span class="txt">{label}</span>
+  {/if}
 </label>
 
 <script>
@@ -16,7 +19,7 @@
 <style>
   label {
     position: relative;
-    display: flex;
+    display: var(--display, flex);
     align-items: center;
     margin-bottom: 10px;
     border: 1px solid #111;

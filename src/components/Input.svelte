@@ -1,5 +1,7 @@
 <div>
-  <label>{label}</label>
+  {#if label}
+    <label>{label}</label>
+  {/if}
   <input 
     type="text" 
     bind:value
@@ -33,6 +35,7 @@
   }
 
   div {
+    width: 100%;
     margin-bottom: 10px;
   }
 </style>
