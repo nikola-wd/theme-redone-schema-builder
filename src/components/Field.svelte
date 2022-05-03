@@ -2,12 +2,25 @@
   label="name: {field_name},  type: {field_data.field_meta.type}"
 >
   <div class="field">
-    {JSON.stringify(field_data)}
-    <p>field name: <strong>{field_name}</strong></p>
-    <p>type: <strong>{field_data.type}</strong></p>
-    <p>label: <strong>{field_data.field_meta.label}</strong></p>
-    <InputAttr id="{id}" label="field-key" key="field_name" onlyKey />
-    <InputAttr id="{id}" label="label" key="main_data.field_meta.type" onlyKey />
+    <InputAttr 
+      id="{id}"
+      label="field-key" 
+      key="field_name" 
+    />
+    <InputAttr 
+      id="{id}" 
+      label="label" 
+      key="main_data"
+      key1="field_meta"
+      key2="label"
+    />
+    <InputAttr 
+      id="{id}" 
+      label="help" 
+      key="main_data"
+      key1="field_meta"
+      key2="help"
+    />
   </div>
 </Dropdown>
 

@@ -3,12 +3,8 @@
   <input 
     type="text" 
     class="input" 
-    bind:value="{$attributes[id][key]}"
-    on:change="{handleUpdate}"
+    bind:value
   />
-  {id}
-  {key}
-  <!-- {JSON.stringify(value)} -->
 </div>
 
 <script>
@@ -17,15 +13,39 @@
   export let id
   export let label;
   export let key;
-  export let onlyKey = false
+  export let key1;
+  export let key2;
 
-
-  const handleUpdate = (e) => {
-    const coppiedAttrs = $attributes
-    coppiedAttrs[id][key] = e.target.value
-
-    $attributes = coppiedAttrs
+  let value
+  if (key2) {
+    value = $attributes[id][key][key1][key2]
+    console.log('Value: ', value)
+  } else if (!key2 && key1) {
+    value = $attributes[id][key][key1]
+  } 
+  else {
+    value = $attributes[id][key]
   }
+
+
+  $: {
+    if (key2) {
+      $attributes[id][key][key1][key2] = value
+    } else if (!key2 && key1) {
+      $attributes[id][key][key1] = value
+    } else {
+      $attributes[id][key] = value
+    }
+  }
+
+
+  // const handleUpdate = (e) => {
+  //   const coppiedAttrs = $attributes
+  //   console.log(e.target.value)
+  //   coppiedAttrs[id][key] = e.target.value
+
+  //   $attributes = coppiedAttrs
+  // }
 </script>
 
 <style scoped>

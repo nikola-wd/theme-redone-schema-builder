@@ -36,11 +36,11 @@ $: code = `
     ${Object.keys(fields).map(field_id => `"${fields[field_id].field_name}": {
       "field_meta": {
         ${Object.entries(fields[field_id].main_data.field_meta)
-          .map(([key, val]) => `"${key}": "${val}"\n       `)}
+          .map(([key, val], propIndex) => `${propIndex !== 0 ? '\n        ' : ''}"${key}": "${val}"`)}
       },
       "default": {}
     }
-  }`)}
+  `)}
 }
 `;
 </script>
