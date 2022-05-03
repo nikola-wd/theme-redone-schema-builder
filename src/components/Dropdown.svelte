@@ -25,12 +25,12 @@
 
 
 <style>
-.dd {
+:global(.dd) {
   border: 1px solid #111;
   border-radius: 4px;
   margin-bottom: 10px;
 }
-.dd__top {
+:global(.dd__top) {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -41,29 +41,30 @@
   cursor: pointer;
   user-select: none;
 }
-.dd__top .svg-wrap {
+:global(.dd__top .svg-wrap) {
   border: 1px solid #111;
   padding: 2px;
   border-radius: 4px;
   width: 12px;
   height: 12px;
   transform-origin: center;
+  transform: rotate(180deg);
   transition: transform .2s ease-in-out;
 }
-.dd:not(.closed) .svg-wrap {
-  transform: rotate(180deg);  
+:global(.dd.closed .svg-wrap) {
+  transform: rotate(0deg);  
 }
 
-.dd__btm {
+:global(.dd__btm) {
   background: #181818;
 }
 
 /* TODO: add animation from svelte */
-.dd.closed .dd__btm {
+:global(.dd.closed .dd__btm) {
   display: none;
 }
 
-.dd__btm__inner {
+:global(.dd__btm__inner) {
   padding: 10px;
 }
 </style>
