@@ -1,15 +1,16 @@
 <div class="input-wrap">
   <div class="label">{label}</div>
-  <input 
-    type="text" 
-    class="input" 
-    bind:value
-  />
+  <select class="input" bind:value>
+    {#each options as option}
+      <option value={option}>{option}</option>
+    {/each}
+  </select>
 </div>
 
 <script>
-  export let label;
+  export let label
   export let value
+  export let options
 </script>
 
 <style scoped>

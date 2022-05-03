@@ -2,19 +2,19 @@
   label="name: {field_name},  type: {field_data.field_meta.type}"
 >
   <div class="field">
-    <InputAttr 
+    <AttrsFieldInput 
       id="{id}"
       label="field-key" 
       key="field_name" 
     />
-    <InputAttr 
+    <AttrsFieldInput 
       id="{id}" 
       label="label" 
       key="main_data"
       key1="field_meta"
       key2="label"
     />
-    <InputAttr 
+    <AttrsFieldInput 
       id="{id}" 
       label="help" 
       key="main_data"
@@ -27,7 +27,7 @@
 
 <script>
   import Dropdown from './Dropdown.svelte'
-  import InputAttr from './InputAttr.svelte'
+  import AttrsFieldInput from './AttrsFieldInput.svelte'
 
   export let id
   export let field_name
@@ -39,8 +39,8 @@
     border: 1px solid #111;
     border-radius: 4px;
     padding: 8px;
-    background: #fff;
-    color: #222;
+    background: #222;
+    color: #fff;
     margin-bottom: 6px;
   }
 </style>

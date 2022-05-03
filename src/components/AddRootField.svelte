@@ -2,26 +2,33 @@
   <Modal>
     Yooo test
     Field Type<br />
-    <FieldTypeSelector bind:value="{selectedFieldType}" /><br /><br />
+    <Select 
+      bind:value="{selectedFieldType}"
+      label="Field Type"
+      options="{['text', 'number']}"
+    />
 
-    <input type="text" bind:value="{fieldName}" /><br /><br />
-    <input type="text" bind:value="{fieldLabel}" /><br /><br />
+    <Input
+      label="fieldName"
+      bind:value="{fieldName}" 
+    />
+    <Input
+      label="fieldLabel"
+      bind:value="{fieldLabel}" 
+    />
     {#if selectedFieldType === 'number'}
-      min<br />
-      <input 
-        type="number" 
+      <Input
+        label="min" 
         bind:value="{data.number.field_meta.min}" 
-      /><br /><br />
-      max<br />
-      <input 
-        type="number" 
+      />
+      <Input
+        label="max" 
         bind:value="{data.number.field_meta.max}" 
-      /><br /><br />
-      step<br />
-      <input 
-        type="number" 
+      />
+      <Input
+        label="step" 
         bind:value="{data.number.field_meta.step}" 
-      /><br /><br />
+      />
     {/if}
 
 
@@ -37,7 +44,9 @@
   import { is_adding_field, attributes } from '../stores';
   import Button from './Button.svelte'
   import Modal from './Modal.svelte'
-  import FieldTypeSelector from './FieldTypeSelector.svelte'
+  import Input from './Input.svelte'
+  import Select from './Select.svelte'
+
 
 
   let selectedFieldType = 'text'

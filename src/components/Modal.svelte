@@ -17,10 +17,10 @@
 
   .modal {
     box-sizing: border-box;
-    background: #fff;
+    background: #111;
     border-radius: 4px;
     padding: 20px;
-    color: #222;
+    color: #fff;
     position: absolute;
     top: 50%;
     left: 50%;

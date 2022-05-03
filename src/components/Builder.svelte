@@ -1,8 +1,8 @@
 <div class="builder">
   <Dropdown label="block_meta">
-    <Input label="BLOCK_REGISTER_NAME" key="BLOCK_REGISTER_NAME" />
-    <Input label="BLOCK_TITLE" key="BLOCK_TITLE" />
-    <Input label="keywords" key="keywords" />
+    <BlockMetaInput label="BLOCK_REGISTER_NAME" key="BLOCK_REGISTER_NAME" />
+    <BlockMetaInput label="BLOCK_TITLE" key="BLOCK_TITLE" />
+    <BlockMetaInput label="keywords" key="keywords" />
     <Checkbox label="hasSidebar" key="hasSidebar" />
     <Checkbox label="hasExample" key="hasExample" />
     <Checkbox label="hasGlobalSettings" key="hasGlobalSettings" />
@@ -10,7 +10,11 @@
 
   <Dropdown label="attributes (fields)">
     <Fields />
-    <Button on:click="{handleOpenRootAddField}">Create Field</Button>
+    <Button 
+      on:click="{handleOpenRootAddField}"
+    >
+      Create Field
+    </Button>
   </Dropdown>
   
   {#if $is_adding_field}
@@ -23,7 +27,7 @@
   import { is_adding_field } from '../stores';
   
   import Dropdown from './Dropdown.svelte'
-  import Input from './Input.svelte'
+  import BlockMetaInput from './BlockMetaInput.svelte'
   import Checkbox from './Checkbox.svelte'
   import Button from './Button.svelte'
   import Fields from './Fields.svelte'
