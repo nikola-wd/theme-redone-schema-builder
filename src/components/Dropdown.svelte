@@ -1,4 +1,7 @@
-<div class="dd" class:closed>
+<div 
+  class="dd" 
+  class:closed
+>
   <div 
     class="dd__top" 
     on:click={() => closed = !closed}
