@@ -1,15 +1,25 @@
 {#each Object.keys(fields) as field_id, index (field_id)}
   <Field id="{field_id}" field_name="{fields[field_id].field_name}" field_data="{fields[field_id].main_data}" />
 {:else}
-  Start adding fields
+  <div class="note">
+    Start adding fields
+  </div>
 {/each}
 
 
 <script>
-import { attributes } from '../stores';
-import Field from './Field.svelte'
+  import { attributes } from '../stores';
+  import Field from './Field.svelte'
 
-
-$: fields = $attributes
-  
+  $: fields = $attributes
 </script>
+
+<style>
+  .note {
+    background: yellow;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 4px;
+  }
+</style>

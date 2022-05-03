@@ -102,6 +102,7 @@
         field_meta: {
           ...data[selectedFieldType].field_meta,
           label: fieldLabel,
+          help: null,
           col: '2',
         },
         default: {
