@@ -41,6 +41,7 @@
 
     <Button 
       --bg="crimson"
+      --mt="auto"
       on:click={handleAbort}
     >
       Abort
@@ -120,7 +121,7 @@
   }
 </script>
 
-<style scoped>
+<style>
   .addRootField {
     position: fixed;
     top: 0;

@@ -7,11 +7,6 @@
 <div class="schema__inner">
 
 <pre>
-  {@html Prism.highlight(codeText, Prism.languages['javascript'])}
-</pre>
-
-
-<pre bind:this={codeWrap}>
 {'{'}
   "block_meta": {'{'}
     "BLOCK_REGISTER_NAME": "{$block_meta.BLOCK_REGISTER_NAME}",
@@ -24,16 +19,18 @@
   {'}'},
 
   "attributes": {'{'}
-  {#each Object.keys(fields) as entry_id, index (entry_id)}
-    {@const field_obj = fields[entry_id]}
+  {#each Object.keys($attributes) as entry_id, index (entry_id)}
+    {@const field_obj = $attributes[entry_id]}
     "{field_obj.field_name}": {'{'}
       "field_meta": {'{'}
       {#each Object.entries(field_obj.main_data.field_meta) as [f_k, f_v], f_i (index + '_' + f_i + '_' + f_k)}
         {@const f_t = typeof f_v}
+        {#if f_v !== null}
         "{f_k}": {#if f_t === 'string'}"{/if}{f_v}{#if f_t === 'string'}"{/if},
+        {/if}
       {/each}
       {'}'}
-    {'}'}{#if index < Object.keys(fields).length - 1},
+    {'}'}{#if index < Object.keys($attributes).length - 1},
       {''}
     {/if}
   {/each}
@@ -50,17 +47,6 @@
 <script>
 import Prism from 'prismjs';
 import { block_meta, attributes } from '../stores';
-
-let codeWrap
-let codeText = ''
-$: fields = $attributes
-
-$: {
-  if (codeWrap && $block_meta) {
-    codeText = codeWrap.innerHTML
-    console.log(codeText)
-  }
-}
 
 
 </script>

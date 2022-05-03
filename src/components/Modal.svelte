@@ -12,10 +12,13 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0,0,0,.5);
+    background: teal;
+    opacity: 0.5;
   }
 
   .modal {
+    display: flex;
+    flex-direction: column;
     box-sizing: border-box;
     background: #111;
     border-radius: 4px;

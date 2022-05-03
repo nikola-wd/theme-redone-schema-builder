@@ -14,6 +14,8 @@
   button {
     border-radius: 4px;
     background: var(--bg, teal);
+    margin-top: var(--mt, 0);
+    margin-bottom: var(--mb, 0);
     color: #fff;
     display: flex;
     justify-content: center;
