@@ -35,18 +35,32 @@
       />
     </TogglableControl>
   </div>
+
+  <Button
+    --bg="crimson"
+    on:click={handleDeleteField}
+  >
+    Delete This Field
+  </Button>
 </Dropdown>
 
 
 <script>
   import { attributes } from '../stores'
   import Dropdown from './Dropdown.svelte'
+  import Button from './Button.svelte'
   import TogglableControl from './controls/TogglableControl.svelte'
   import AttrsFieldInput from './AttrsFieldInput.svelte'
 
   export let id
   export let field_name
   export let field_data
+
+
+  const handleDeleteField = () => {
+    delete $attributes[id]
+    $attributes = $attributes
+  }
 </script>
 
 <style scoped>
