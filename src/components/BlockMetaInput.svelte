@@ -1,6 +1,4 @@
-<div class="input-wrap">
-  <Input {label} {key} bind:value="{value}" />
-</div>
+<Input {label} {key} bind:value="{value}" />
 
 <script>
   import { block_meta } from '../stores';

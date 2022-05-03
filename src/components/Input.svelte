@@ -1,8 +1,7 @@
-<div class="input-wrap">
-  <div class="label">{label}</div>
+<div>
+  <label>{label}</label>
   <input 
     type="text" 
-    class="input" 
     bind:value
   />
 </div>
@@ -12,8 +11,8 @@
   export let value
 </script>
 
-<style scoped>
-  .input {
+<style>
+  input {
     box-sizing: border-box;
     border: 0;
     border-radius: 4px;
@@ -25,14 +24,15 @@
     border: 1px solid #222;
   }
 
-  .input-wrap .label {
+  label {
+    display: block;
     margin-bottom: 6px;
     color: #fff;
     font-size: 14px;
     font-weight: 600;
   }
 
-  .input-wrap {
+  div {
     margin-bottom: 10px;
   }
 </style>

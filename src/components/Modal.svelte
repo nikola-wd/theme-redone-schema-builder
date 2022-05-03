@@ -1,4 +1,4 @@
-<div class="backdrop"></div>
+<div class="backdrop" />
 <div class="modal">
   <slot />
 </div>

@@ -40,7 +40,7 @@
 
 
     <Button 
-      danger
+      --bg="crimson"
       on:click={handleAbort}
     >
       Abort

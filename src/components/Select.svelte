@@ -1,6 +1,6 @@
-<div class="input-wrap">
-  <div class="label">{label}</div>
-  <select class="input" bind:value>
+<div>
+  <label>{label}</label>
+  <select bind:value>
     {#each options as option}
       <option value={option}>{option}</option>
     {/each}
@@ -14,7 +14,7 @@
 </script>
 
 <style scoped>
-  .input {
+  select {
     box-sizing: border-box;
     border: 0;
     border-radius: 4px;
@@ -26,14 +26,14 @@
     border: 1px solid #222;
   }
 
-  .input-wrap .label {
+  label {
     margin-bottom: 6px;
     color: #fff;
     font-size: 14px;
     font-weight: 600;
   }
 
-  .input-wrap {
+  div {
     margin-bottom: 10px;
   }
 </style>

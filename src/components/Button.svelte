@@ -13,7 +13,7 @@
 <style scoped>
   button {
     border-radius: 4px;
-    background: teal;
+    background: var(--bg, teal);
     color: #fff;
     display: flex;
     justify-content: center;
@@ -25,10 +25,6 @@
     text-transform: uppercase;
     font-weight: 600; 
     transition: opacity .2s ease-in-out;
-  }
-
-  button.danger {
-    background: crimson;
   }
 
   button:hover {
