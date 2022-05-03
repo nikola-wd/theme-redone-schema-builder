@@ -1,6 +1,14 @@
-<button type="button" on:click>
+<button 
+  type="button" 
+  on:click
+  class="{danger ? 'danger' : ''}"
+>
   <slot />
 </button>
+
+<script>
+  export let danger = false
+</script>
 
 <style scoped>
   button {
@@ -17,6 +25,10 @@
     text-transform: uppercase;
     font-weight: 600; 
     transition: opacity .2s ease-in-out;
+  }
+
+  button.danger {
+    background: crimson;
   }
 
   button:hover {

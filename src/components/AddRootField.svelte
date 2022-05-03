@@ -37,6 +37,14 @@
     >
       Add Field
     </Button>
+
+
+    <Button 
+      danger
+      on:click={handleAbort}
+    >
+      Abort
+    </Button>
   </Modal>
 </div>
 
@@ -79,6 +87,9 @@
     }
 
   
+
+  const handleAbort = () => $is_adding_field = false
+
   const handleAddField = () => {
 
 
