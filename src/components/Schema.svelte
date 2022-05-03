@@ -4,7 +4,7 @@
 
 <div class="schema">
 <div class="top">model.json</div>
-<div class="schema__inner">
+<div class="inner">
 
 <pre>
 {'{'}
@@ -61,13 +61,34 @@ import { block_meta, attributes } from '../stores';
     font-size: 16px;
   }
 
-  .schema__inner {
+  .inner {
     overflow-y: auto;
     padding: 15px;
     height: 100%;
     padding-top: 40px;  
     color: #fff;
     line-height: 1.5;
+  }
+
+  /* width */
+  .inner::-webkit-scrollbar {
+    width: 5px;
+  }
+
+  /* Track */
+  .inner::-webkit-scrollbar-track {
+    background: #444;
+  }
+
+  /* Handle */
+  .inner::-webkit-scrollbar-thumb {
+    background: yellow;
+    border-radius: 8px;
+  }
+
+  /* Handle on hover */
+  .inner::-webkit-scrollbar-thumb:hover {
+    background: orange;
   }
 
   .top {
@@ -77,7 +98,7 @@ import { block_meta, attributes } from '../stores';
     width: 100%;
     padding: 10px;
     color: #fff;
-    background: rgba(0,0,0, .5);
+    background: rgba(0,0,0, .9);
   }
 
   pre .token.operator {

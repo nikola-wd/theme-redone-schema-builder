@@ -1,4 +1,5 @@
 import { writable } from 'svelte/store';
+import { v4 as uuidv4 } from 'uuid';
 
 export const block_meta = writable({
   BLOCK_REGISTER_NAME: 'folder-name-here',
@@ -11,7 +12,7 @@ export const block_meta = writable({
 });
 
 export const attributes = writable({
-  id_1: {
+  [uuidv4()]: {
     field_name: 'title',
     main_data: {
       type: 'object',
@@ -28,7 +29,7 @@ export const attributes = writable({
       },
     },
   },
-  id_2: {
+  [uuidv4()]: {
     field_name: 'text',
     main_data: {
       type: 'object',

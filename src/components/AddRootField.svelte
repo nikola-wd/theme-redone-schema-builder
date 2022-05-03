@@ -58,6 +58,7 @@
 
 <script>
   import { is_adding_field, attributes } from '../stores';
+  import { v4 as uuidv4 } from 'uuid';
   import Button from './Button.svelte'
   import Modal from './Modal.svelte'
   import Input from './Input.svelte'
@@ -143,7 +144,7 @@
     // }
 
 
-    $attributes['test_id_3'] = {
+    $attributes[uuidv4()] = {
       ...newField
     }
 

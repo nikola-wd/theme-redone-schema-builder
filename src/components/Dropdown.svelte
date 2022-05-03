@@ -33,6 +33,10 @@
   border-radius: 4px;
   margin-bottom: 10px;
 }
+:global(.dd:last-of-type) {
+  margin-bottom: 0;
+}
+
 :global(.dd__top) {
   display: flex;
   align-items: center;
