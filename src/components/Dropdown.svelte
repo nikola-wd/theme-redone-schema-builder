@@ -1,6 +1,7 @@
 <div 
   class="dd" 
   class:closed
+  on:click
 >
   <div 
     class="dd__top" 

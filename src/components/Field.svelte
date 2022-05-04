@@ -1,4 +1,5 @@
 <Dropdown 
+  on:click={handleEditingFieldId}
   label="name: {field_name},  type: {field_data.field_meta.type}"
 >
   <div class="field">
@@ -46,7 +47,7 @@
 
 
 <script>
-  import { attributes } from '../stores'
+  import { attributes, editing_field_id } from '../stores'
   import Dropdown from './Dropdown.svelte'
   import Button from './Button.svelte'
   import TogglableControl from './controls/TogglableControl.svelte'
@@ -60,6 +61,10 @@
   const handleDeleteField = () => {
     delete $attributes[id]
     $attributes = $attributes
+  }
+
+  const handleEditingFieldId = () => {
+    $editing_field_id = id
   }
 </script>
 

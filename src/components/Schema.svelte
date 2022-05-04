@@ -21,6 +21,7 @@
   "attributes": {'{'}
   {#each Object.keys($attributes) as entry_id, index (entry_id)}
     {@const field_obj = $attributes[entry_id]}
+    <span class="field-block" class:active={$editing_field_id === entry_id}>
     "{field_obj.field_name}": {'{'}
       "field_meta": {'{'}
       {#each Object.entries(field_obj.main_data.field_meta) as [f_k, f_v], f_i (index + '_' + f_i + '_' + f_k)}
@@ -33,6 +34,7 @@
     {'}'}{#if index < Object.keys($attributes).length - 1},
       {''}
     {/if}
+    </span>
   {/each}
   {'}'}
 
@@ -46,7 +48,7 @@
 
 <script>
 import Prism from 'prismjs';
-import { block_meta, attributes } from '../stores';
+import { block_meta, attributes, editing_field_id } from '../stores';
 
 
 </script>
@@ -54,7 +56,7 @@ import { block_meta, attributes } from '../stores';
 <style scoped>
   .schema {
     position: relative;
-    height: 100%;
+    height: 50%;
     overflow: hidden;
     background: #111;
     font-family: monospace;
@@ -68,6 +70,14 @@ import { block_meta, attributes } from '../stores';
     padding-top: 40px;  
     color: #fff;
     line-height: 1.5;
+  }
+   
+
+   .field-block {
+     display: inline-block;
+   }
+  .active {
+    box-shadow: 0 0 0 1px red;
   }
 
   /* width */

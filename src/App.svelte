@@ -1,13 +1,14 @@
 <script>
-  import Counter from './lib/Counter.svelte'
   import Builder from './components/Builder.svelte'
   import Schema from './components/Schema.svelte'
+  import Latte from './components/Latte.svelte'
 </script>
 
 <div class="theme-redone-schema-builder-wrap">
   <Builder />
   <div class="result">
     <Schema />
+    <Latte />
   </div>
 </div>
 

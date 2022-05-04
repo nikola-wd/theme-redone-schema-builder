@@ -1,4 +1,4 @@
-<Input {label} {key} bind:value="{value}" />
+<Input {label} {key} bind:value />
 
 <script>
   import { attributes } from '../stores';

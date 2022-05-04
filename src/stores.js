@@ -63,3 +63,5 @@ export const attributes = writable({
 });
 
 export const is_adding_field = writable(false);
+
+export const editing_field_id = writable(null);
