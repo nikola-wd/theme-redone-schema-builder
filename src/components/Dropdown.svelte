@@ -8,8 +8,12 @@
     on:click={() => closed = !closed}
   >
     {label}
-    <div class="svg-wrap">
-      <Chevron />
+
+    <div class="dd__top__right">
+      <slot name="top-btn" />
+      <div class="svg-wrap">
+        <Chevron />
+      </div>
     </div>
   </div>
   <div class="dd__btm">
@@ -55,9 +59,14 @@
   border-radius: 4px;
   width: 12px;
   height: 12px;
+  margin-left: 10px;
   transform-origin: center;
   transform: rotate(180deg);
   transition: transform .2s ease-in-out;
+}
+:global(.dd__top__right) {
+  display: flex;
+  align-items: center;
 }
 :global(.dd.closed .svg-wrap) {
   transform: rotate(0deg);  

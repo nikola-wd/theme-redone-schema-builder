@@ -20,9 +20,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100%;
+    width: var(--size, 100%);;
     border: 0;
-    height: 30px;
+    height: var(--size, 30px);
     cursor: pointer;
     text-transform: uppercase;
     font-weight: 600; 

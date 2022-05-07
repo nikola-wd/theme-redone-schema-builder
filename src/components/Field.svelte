@@ -38,10 +38,12 @@
   </div>
 
   <Button
+    slot="top-btn"
     --bg="crimson"
+    --size="26px"
     on:click={handleDeleteField}
   >
-    Delete This Field
+    <Trash />
   </Button>
 </Dropdown>
 
@@ -50,6 +52,8 @@
   import { attributes, editing_field_id } from '../stores'
   import Dropdown from './Dropdown.svelte'
   import Button from './Button.svelte'
+  import Trash from './icons/Trash.svelte'
+
   import TogglableControl from './controls/TogglableControl.svelte'
   import AttrsFieldInput from './AttrsFieldInput.svelte'
 
