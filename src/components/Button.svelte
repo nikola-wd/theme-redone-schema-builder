@@ -1,16 +1,12 @@
 <button 
   type="button" 
-  on:click
-  class="{danger ? 'danger' : ''}"
+  on:click|stopPropagation
 >
   <slot />
 </button>
 
-<script>
-  export let danger = false
-</script>
 
-<style scoped>
+<style>
   button {
     border-radius: 4px;
     background: var(--bg, teal);

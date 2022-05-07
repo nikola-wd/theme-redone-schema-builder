@@ -18,6 +18,7 @@
     width: 100%;
     height: 100%;
     background: teal;
+    z-index: 1;
     opacity: 0.5;
   }
 
@@ -35,5 +36,6 @@
     transform: translate(-50%, -50%);
     width: calc(100% - 100px);
     height: calc(100% - 100px);
+    z-index: 1;
   }
 </style>
